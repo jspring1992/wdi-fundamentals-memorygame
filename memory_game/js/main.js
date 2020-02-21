@@ -2,19 +2,7 @@ let cards = ["Queen", "Queen", "King", "King"];
 
 let cardsInPlay = [];
 
-let cardOne = cards[0];
-
-let cardTwo = cards[1];
-
-cardsInPlay.push(cardOne);
-
-cardsInPlay.push(cardTwo);
-
-console.log("You flipped the " + cardsInPlay[0]);
-
-console.log("You flipped the " + cardsInPlay[1]);
-
-if (cardsInPlay.length === 2)
+function checkForMatch()
 {
 	if (cardsInPlay[0] === cardsInPlay[1])
 	{
@@ -25,4 +13,18 @@ if (cardsInPlay.length === 2)
 	{
 		alert('Sorry, try again!');
 	}
+}
+
+function flipCard(cardId)
+{
+
+	console.log("User flipped " + cards[cardId]);
+
+	cardsInPlay.push(cards[cardId]);
+
+	if (cardsInPlay.length === 2)
+	{
+		checkForMatch();
+	}
+
 }
